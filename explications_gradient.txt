@@ -1,0 +1,78 @@
+lgorithme du gradient est une méthode d'optimisation utilisée pour minimiser (ou maximiser)
+une fonction. En machine learning, il est surtout utilisé dans des algorithmes comme la
+régression linéaire ou les réseaux de neurones pour ajuster les paramètres et minimiser la 
+fonction de coût (ou d'erreur), afin d'améliorer les prédictions du modèle.
+
+
+1. Principe de Base du Gradient
+
+Le gradient d'une fonction est un vecteur de dérivées partielles qui pointe dans la direction
+de la plus grande augmentation de cette fonction. Dans le contexte de la minimisation de
+fonction, on utilise la descente de gradient, qui suit la direction opposée au gradient pour
+réduire progressivement la valeur de la fonction.
+
+
+2. Descente de Gradient : Idée Générale
+
+L'objectif de l'algorithme de descente de gradient est de trouver les valeurs optimales des
+paramètres qui minimisent la fonction de coût. Pour cela, il procède en plusieurs étapes :
+
+    1. Initialisation : Choisir des valeurs initiales pour les paramètres.
+
+    2. Calcul du gradient : Calculer le gradient de la fonction de coût par rapport à chaque
+    paramètre. Ce gradient indique comment modifier les paramètres pour diminuer la fonction
+    de coût.
+
+    3. Mise à jour des paramètres : Ajuster les paramètres en suivant la direction opposée au
+    gradient. La mise à jour est souvent formulée comme suit :
+    θ = θ − α ⋅ ∇θJ(θ)
+    où :
+        θ représente les paramètres du modèle (par exemple, les coefficients d'une régression
+        linéaire)
+        α est le taux d'apprentissage (learning rate), qui contrôle la taille du pas vers le
+        minimum,
+        ∇θJ(θ) est le gradient de la fonction de coût J par rapport à θ.
+
+    4. Itérations : Répéter les étapes 2 et 3 jusqu'à ce que la fonction de coût atteigne une
+    valeur minimale ou que les changements deviennent très faibles.
+
+
+3. Types de Descente de Gradient
+
+Il existe plusieurs variantes de la descente de gradient, adaptées à différentes situations et
+volumes de données.
+    
+    Descente de gradient par lot (batch gradient descent) : Utilise l'ensemble complet des
+    données pour calculer le gradient. Elle peut être coûteuse en calcul pour les grands
+    ensembles de données.
+
+    Descente de gradient stochastique (SGD) : Utilise une seule donnée (ou un sous-ensemble de
+    données) pour chaque mise à jour. Cela réduit le coût de calcul mais introduit du bruit,
+    ce qui peut ralentir la convergence.
+
+    Descente de gradient par mini-lots (mini-batch gradient descent) : Utilise de petits sous-
+    ensembles de données (mini-lots) pour chaque étape. Cette méthode combine les avantages 
+    des deux précédentes en augmentant la vitesse de calcul et en réduisant les oscillations.
+
+
+4. Convergence et Choix du Taux d'Apprentissage
+
+Le taux d'apprentissage est crucial pour le bon fonctionnement de la descente de gradient. S'il
+est trop faible, la convergence sera lente. S'il est trop élevé, la fonction de coût risque
+d'osciller sans converger, ou même de diverger. La convergence peut être surveillée en
+visualisant l'évolution de la fonction de coût au fil des itérations.
+
+
+6. Avantages et Inconvénients de la Descente de Gradient
+
+    Avantages :
+        Algorithme efficace pour minimiser les fonctions différentiables, surtout pour les modèles linéaires.
+        Facilement adaptable aux grands ensembles de données avec la descente stochastique ou par mini-lots.
+
+    Inconvénients :
+        Sensible au choix du taux d'apprentissage.
+        Peut être piégé dans des minimums locaux pour certaines fonctions de coût non convexes.
+
+La descente de gradient est l'une des bases de l'optimisation en machine learning et est
+utilisée dans de nombreux algorithmes plus complexes pour améliorer les performances des
+modèles

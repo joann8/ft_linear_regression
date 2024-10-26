@@ -1,0 +1,65 @@
+La régression linéaire est une méthode de machine learning simple mais puissante,
+utilisée pour modéliser la relation entre une ou plusieurs variables indépendantes
+(caractéristiques) et une variable dépendante (cible). Elle est particulièrement adaptée
+pour les problèmes de prédiction continue où la cible est une valeur numérique.
+
+
+1. Concept de la Régression Linéaire
+
+L'idée de la régression linéaire est de trouver une droite (ou un plan dans le cas de
+plusieurs variables) qui représente le mieux possible les données. Pour cela, on définit
+la relation entre les variables d’entrée XX et la variable cible YY comme une fonction
+linéaire de la forme :
+    Y = b0 + b1 * X1 + b2 * X2 + ⋯ + bn * Xn + ϵ
+    --> Y est la variable cible que l'on souhaite prédire.
+    --> X1,X2,…,Xn sont les variables explicatives ou les caractéristiques.
+    --> 0​ est l'ordonnée à l'origine (l'interception), et b1,b2,…,bn​ sont les 
+        coefficients des variables qui définissent la pente.
+    --> ϵ est le terme d'erreur, qui représente la différence entre les prédictions
+        et les valeurs réelles.
+
+Pour une régression linéaire simple avec une seule caractéristique, l'équation se réduit à :
+    Y = b0 + b1 * X + ϵ
+
+
+2. Objectif : Minimiser l'erreur
+
+L'objectif est de trouver les coefficients b0,b1,…,bn​ qui minimisent la différence entre les 
+valeurs prédites Y^ et les valeurs réelles Y.
+
+La méthode des moindres carrés est utilisée pour cela. Elle consiste à minimiser la somme des
+carrés des résidus (les différences entre Y et Y^) :
+    Erreur = ∑i = 1m(Yi−Y^i)2 où m est le nombre d'échantillons.
+
+
+3. Calcul des Coefficients (En Régression Linéaire Simple)
+
+Pour une régression linéaire simple avec une seule variable, les coefficients peuvent être calculés
+ analytiquement :
+
+    La pente b1​ est donnée par : b1 = ∑(X−Xˉ) * (Y−Yˉ) / ∑(X−Xˉ)2
+    L’interception b0​ est calculée comme suit : b0 = Yˉ − b1 * Xˉ
+    où Xˉ et Yˉ représentent les moyennes des données X et Y.
+
+
+4. Types de Régression Linéaire
+
+Il existe plusieurs variantes de la régression linéaire, adaptées à des situations spécifiques :
+    Régression linéaire simple : Modèle avec une seule caractéristique.
+    Régression linéaire multiple : Modèle avec plusieurs caractéristiques.
+    Régression polynomial : Permet de modéliser des relations non linéaires en transformant les
+    caractéristiques.
+
+
+
+5. Évaluation de la Régression Linéaire
+
+Les principales mesures pour évaluer la qualité d'une régression linéaire sont :
+    MSE (Mean Squared Error) : Moyenne des carrés des erreurs.
+    RMSE (Root Mean Squared Error) : Racine carrée de la MSE, qui donne l'erreur en unités d'origine.
+    R² (R-squared) : Mesure de la proportion de variance expliquée par le modèle. Plus le R2R2 
+    est proche de 1, plus le modèle est précis.
+
+La régression linéaire est souvent utilisée comme premier modèle de référence en machine
+learning en raison de sa simplicité et de sa rapidité, avant de tester des modèles plus complexes
+pour des données non linéaires ou plus variées.

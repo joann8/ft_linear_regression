@@ -3,6 +3,7 @@ import os
 
 
 def get_km() -> int | float:
+    """Get user input for mileage to check"""
     print("What is the car mileage to check? "
           "(please enter an int or a float >= 0)")
     input = sys.stdin.readline()
@@ -14,17 +15,17 @@ def get_km() -> int | float:
 
 def predict_price(km: int | float, theta0: int | float, theta1: int | float) \
                   -> int | float:
+    """Apply simple linear function to predict price"""
     value = theta0 + theta1 * km
-    if value < 0:
-        raise ValueError("The price cannot be estimated (result is a negative value, "
-                         "please check theta0 and theta1)")
-    return value
+    return 0 if value < 0 else value
+    # for negative value in our model we consider the price is 0
 
 
-def get_theta()-> list[int|float]:
-    # Check if model parameters file exists, load if available
+def get_theta() -> list[int | float]:
+    """Check if model parameters file exists, load if available"""
     theta0, theta1 = 0, 0
     if os.path.exists('model_parameters.txt'):
+        # -______________________-Que faire en cas de string vides? fichier vide?
         with open('model_parameters.txt', 'r') as f:
             theta0 = float(f.readline().strip())
             theta1 = float(f.readline().strip())

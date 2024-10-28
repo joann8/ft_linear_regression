@@ -7,7 +7,6 @@ def load(path: str) -> pd.DataFrame:
     '''
     try:
         data = pd.read_csv(path)
-        # print(data)
         return data
     except FileNotFoundError:
         print("Le fichier n'a pas été trouvé. Vérifiez le chemin du fichier.")
